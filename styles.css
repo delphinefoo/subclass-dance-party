@@ -26,6 +26,16 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+.colorChange{
+  border:30px solid blue;
+  border-radius:30px;
+  position:absolute;
+}
+
+.secondColor{
+  border-color: green;
+}
+
 img {
   position:absolute;
 }

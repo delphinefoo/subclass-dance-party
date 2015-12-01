@@ -30,6 +30,11 @@ $(document).ready(function(){
 
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+
+    $('.colorChange').on('mouseover', function() {
+      $(this).toggleClass('secondColor');
+    });
+
   });
 
   $("#lineUpButton").on("click", function(event) {
@@ -38,4 +43,15 @@ $(document).ready(function(){
     }
   });
 
+/*  $("#colorChangeButton").on("mouseover", function(event) {
+    $('.colorChange').css('border-color','yellow');
+  });*/
+  $('div').on('mouseenter', '.colorChange', function(e) {
+     $(this).css('border-color', 'yellow');
+   });
+
+
+
+
 });
+
