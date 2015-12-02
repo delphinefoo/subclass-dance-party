@@ -39,3 +39,11 @@ body, a:link, a:visited, a:active{
 img {
   position:absolute;
 }
+
+.rotating {
+  animation: rotation 0.3s infinite forwards;
+}
+@keyframes rotation {
+  from { transform: rotate(10deg);}
+  to { transform: rotate(-10deg);}
+}

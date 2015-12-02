@@ -43,13 +43,29 @@ $(document).ready(function(){
     }
   });
 
-/*  $("#colorChangeButton").on("mouseover", function(event) {
-    $('.colorChange').css('border-color','yellow');
-  });*/
-  $('div').on('mouseenter', '.colorChange', function(e) {
-     $(this).css('border-color', 'yellow');
-   });
-
+  $('#closestNeighbor').on("click",function() {
+    window.dancers.forEach(function(current){
+      var topPosition = current.top;
+      var leftPosition = current.left;
+      var biggestDistance = 0;
+      var biggestDancer;
+      for (var i = 0; i < window.dancers.length; i++){
+        var currentComparisonLeft = window.dancers[i].left;
+        var currentComparisonTop = window.dancers[i].top;
+        var distance = Math.sqrt( Math.pow(topPosition-currentComparisonTop,2) + Math.pow(leftPosition-currentComparisonLeft,2) );
+        if(distance === 0){
+          continue;
+        }
+        if ( distance > biggestDistance){
+          biggestDistance = distance;
+          biggestDancer = window.dancers[i];
+        }
+      }
+      biggestDancer.top = current.top + 25;
+      biggestDancer.left = current.left;
+      biggestDancer.setPosition(topPosition,leftPosition);
+    });
+  });
 
 
 
